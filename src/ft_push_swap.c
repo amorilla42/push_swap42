@@ -6,7 +6,7 @@
 /*   By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 20:42:05 by amorilla          #+#    #+#             */
-/*   Updated: 2023/02/05 19:48:17 by amorilla         ###   ########.fr       */
+/*   Updated: 2023/02/05 21:58:02 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	freestack(t_stack **s)
 	}
 }
 
-int	main(void)
+int	main(int argc, char **argv)
 {
 	t_stack	*a;
 	t_stack	*b;
