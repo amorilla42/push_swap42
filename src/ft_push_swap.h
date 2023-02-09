@@ -6,7 +6,7 @@
 /*   By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 13:02:59 by amorilla          #+#    #+#             */
-/*   Updated: 2023/02/05 18:58:57 by amorilla         ###   ########.fr       */
+/*   Updated: 2023/02/09 20:01:16 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,7 @@ void	reverserot(t_stack **stack, char option);
 void	rrr(t_stack **a, t_stack **b);
 void	addnode(t_stack *st, int num);
 t_stack	*createnode(int num);
+void	print_error(void);
+int		*parse_input(int argnum, char **args);
 
 #endif
