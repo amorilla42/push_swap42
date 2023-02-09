@@ -6,7 +6,7 @@
 /*   By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 13:02:59 by amorilla          #+#    #+#             */
-/*   Updated: 2023/02/09 21:15:56 by amorilla         ###   ########.fr       */
+/*   Updated: 2023/02/09 23:38:29 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,9 @@ void	addnode(t_stack *st, int num);
 t_stack	*createnode(int num);
 void	print_error(void);
 int		*parse_input(int argnum, char **args);
+int		is_valid_number(char *str);
+int		num_in_range(long num);
+int		check_parse_int_conditions(char **lst_of_lst, int size, int *intlst);
+void	free_all_list(char ***splited_str, int **list_int);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/18 18:41:38 by amorilla          #+#    #+#              #
-#    Updated: 2023/02/09 21:17:30 by amorilla         ###   ########.fr        #
+#    Updated: 2023/02/09 23:45:36 by amorilla         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,8 @@ SRCS = 	src/ft_push_swap.c \
 		src/ft_movements.c \
 		src/ft_movements_reverse.c \
 		src/ft_parse_input.c \
-		src/ft_utilities.c
+		src/ft_parse_input_utilities.c \
+		src/ft_checkdup.c
 
 OBJS = $(SRCS:.c=.o)
 

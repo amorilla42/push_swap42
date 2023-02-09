@@ -6,7 +6,7 @@
 /*   By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 21:53:35 by amorilla          #+#    #+#             */
-/*   Updated: 2023/02/09 21:40:33 by amorilla         ###   ########.fr       */
+/*   Updated: 2023/02/09 23:43:04 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,13 @@ static char	*calloctemp(int argnum)
 static long	atoi_long(char *str)
 {
 	long	res;
-	int		sign;
+	long	sign;
 
 	sign = 1;
 	res = 0;
-	if (*str == '+' || *str == '-')
+	if (*str == '-')
 	{
-		if (*str == '-')
-			sign = -sign;
+		sign = -sign;
 		str++;
 	}
 	while (*str != '\0' && *str >= '0' && *str <= '9')
@@ -70,29 +69,27 @@ static int	number_of_elements(char *s, char c)
 	return (count);
 }
 
-
 static int	*parse_input_to_int(char **input)
 {
 	int		*list_int;
 	char	**list_of_lists;
-	int		size_of_list;
+	int		list_size;
 
 	list_of_lists = ft_split((char const *)*input, ' ');
-	size_of_list = number_of_elements(*input, ' ');
-	if (size_of_list == 0)
-		print_error();
-	list_int = (int *)ft_calloc(sizeof(int), size_of_list);
-	while (size_of_list >= 0)
-	{
-//		if()
-	}
-	
-
-
-
-
-	
+	list_size = number_of_elements(*input, ' ');
 	free(*input);
+	if (list_size == 0)
+		print_error();
+	list_int = (int *)ft_calloc(sizeof(int), list_size + 1);
+	if (list_int != '\0')
+		free_all_list(&list_of_lists, &list_int);
+	while (list_size-- > 0)
+	{
+		if (check_parse_int_conditions(list_of_lists, list_size, list_int))
+			list_int[list_size] = (int) atoi_long(list_of_lists[list_size]);
+		else
+			free_all_list(&list_of_lists, &list_int);
+	}
 	return (list_int);
 }
 
@@ -122,4 +119,6 @@ int	*parse_input(int argnum, char **args)
 	}
 	free(temp);
 	list_int = parse_input_to_int(&aux);
+	
+	return (list_int);
 }
