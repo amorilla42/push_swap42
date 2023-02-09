@@ -6,7 +6,7 @@
 /*   By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 21:53:35 by amorilla          #+#    #+#             */
-/*   Updated: 2023/02/09 21:25:53 by amorilla         ###   ########.fr       */
+/*   Updated: 2023/02/09 21:40:33 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,11 @@ static char	*calloctemp(int argnum)
 
 static long	atoi_long(char *str)
 {
-	int	res;
-	int	sign;
+	long	res;
+	int		sign;
 
 	sign = 1;
 	res = 0;
-	while ((*str >= '\t' && *str <= '\r') || *str == ' ')
-		str++;
 	if (*str == '+' || *str == '-')
 	{
 		if (*str == '-')
@@ -83,8 +81,12 @@ static int	*parse_input_to_int(char **input)
 	size_of_list = number_of_elements(*input, ' ');
 	if (size_of_list == 0)
 		print_error();
+	list_int = (int *)ft_calloc(sizeof(int), size_of_list);
+	while (size_of_list >= 0)
+	{
+//		if()
+	}
 	
-
 
 
 
