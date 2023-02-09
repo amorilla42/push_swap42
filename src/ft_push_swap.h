@@ -6,7 +6,7 @@
 /*   By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 13:02:59 by amorilla          #+#    #+#             */
-/*   Updated: 2023/02/09 20:01:16 by amorilla         ###   ########.fr       */
+/*   Updated: 2023/02/09 21:15:56 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <limits.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include "../libft/libft.h"
 
 //value: 	  numero que hay que ordenar.
 

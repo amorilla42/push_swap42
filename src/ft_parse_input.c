@@ -6,7 +6,7 @@
 /*   By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 21:53:35 by amorilla          #+#    #+#             */
-/*   Updated: 2023/02/09 21:05:06 by amorilla         ###   ########.fr       */
+/*   Updated: 2023/02/09 21:25:53 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static char	*calloctemp(int argnum)
 {
 	char	*temp;
 
-	temp = ft_calloc(sizeof(char), 2);
+	temp = (char *)ft_calloc(sizeof(char), 2);
 	if (!temp || argnum < 2)
 	{
 		if (temp)
@@ -51,14 +51,44 @@ static long	atoi_long(char *str)
 	return (res);
 }
 
+static int	number_of_elements(char *s, char c)
+{
+	int	count;
+	int	i;
+
+	count = 0;
+	i = 0;
+	if (!s)
+		return (0);
+	while (s[i])
+	{
+		while (s[i] && s[i] == c)
+			i++;
+		if (s[i])
+			count++;
+		while (s[i] && s[i] != c)
+			i++;
+	}
+	return (count);
+}
 
 
 static int	*parse_input_to_int(char **input)
 {
 	int		*list_int;
-	char	**list_str;
+	char	**list_of_lists;
+	int		size_of_list;
 
-	list_str = ft_split((char const *)*input, ' ');
+	list_of_lists = ft_split((char const *)*input, ' ');
+	size_of_list = number_of_elements(*input, ' ');
+	if (size_of_list == 0)
+		print_error();
+	
+
+
+
+
+
 	
 	free(*input);
 	return (list_int);
