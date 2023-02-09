@@ -6,7 +6,7 @@
 /*   By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 21:53:35 by amorilla          #+#    #+#             */
-/*   Updated: 2023/02/09 23:43:04 by amorilla         ###   ########.fr       */
+/*   Updated: 2023/02/10 00:43:41 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,9 @@ static char	*calloctemp(int argnum)
 	return (temp);
 }
 
-static long	atoi_long(char *str)
+//Doesn't check if its valid because is checked in:
+//int check_parse_int_conditions(char **lst_of_lst, int size, int *intlst)
+long	atoi_long(char *str)
 {
 	long	res;
 	long	sign;
@@ -74,26 +76,27 @@ static int	*parse_input_to_int(char **input)
 	int		*list_int;
 	char	**list_of_lists;
 	int		list_size;
+	int		list_size_copy;
 
 	list_of_lists = ft_split((char const *)*input, ' ');
 	list_size = number_of_elements(*input, ' ');
+	list_size_copy = list_size;
 	free(*input);
 	if (list_size == 0)
 		print_error();
 	list_int = (int *)ft_calloc(sizeof(int), list_size + 1);
-	if (list_int != '\0')
+	if (!list_int)
 		free_all_list(&list_of_lists, &list_int);
 	while (list_size-- > 0)
 	{
-		if (check_parse_int_conditions(list_of_lists, list_size, list_int))
+		if (check_parse_int_conditions(list_of_lists, list_size, list_int,
+				list_size_copy))
 			list_int[list_size] = (int) atoi_long(list_of_lists[list_size]);
 		else
 			free_all_list(&list_of_lists, &list_int);
 	}
 	return (list_int);
 }
-
-
 
 /*
 	aux      = is the string with all the args
@@ -119,6 +122,5 @@ int	*parse_input(int argnum, char **args)
 	}
 	free(temp);
 	list_int = parse_input_to_int(&aux);
-	
 	return (list_int);
 }

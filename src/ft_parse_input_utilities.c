@@ -1,17 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_utilities.c                                     :+:      :+:    :+:   */
+/*   ft_parse_input_utilities.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 21:04:39 by amorilla          #+#    #+#             */
-/*   Updated: 2023/02/09 23:37:39 by amorilla         ###   ########.fr       */
+/*   Updated: 2023/02/10 00:45:03 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
-
 
 void	print_error(void)
 {
@@ -58,11 +57,11 @@ void	free_all_list(char ***splited_str, int **list_int)
 	print_error();
 }
 
-int	check_parse_int_conditions(char **lst_of_lst, int size, int *intlst)
+int	check_parse_int_conditions(char **lsts, int size, int *intlst, int cpy)
 {
 	long	num;
 
-	num = atoi_long(lst_of_lst[size]);
-	return (is_valid_number(lst_of_lst[size]) && num_in_range(num)
-		&& check_dup(num, intlst));
+	num = atoi_long(lsts[size]);
+	return (is_valid_number(lsts[size]) && num_in_range(num)
+		&& check_no_dup(num, intlst, size, cpy));
 }

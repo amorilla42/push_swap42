@@ -6,7 +6,7 @@
 /*   By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 20:42:05 by amorilla          #+#    #+#             */
-/*   Updated: 2023/02/09 22:41:13 by amorilla         ###   ########.fr       */
+/*   Updated: 2023/02/10 00:39:28 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,22 @@ void	freestack(t_stack **s)
 	}
 }
 
-//int argc, char **argv
-int	main(void)
+int	main(int argc, char **argv)
 {
+	int	*lst;
+	int	i = 0;
+
+	if (argc > 1)
+	{
+		lst = parse_input(argc, argv);
+		while (i < (*(&lst + 1) - lst))
+			printf("%d, ", lst[i++]);
+	}
+	exit(EXIT_SUCCESS);
+
+
+
+	/*
 	int num;
 	char *str = "0000006";
 
@@ -54,8 +67,7 @@ int	main(void)
 	ft_putendl_fd(" ", 1);
 	ft_putnbr_fd(is_valid_number(str), 1);
 	ft_putendl_fd(" ", 1);
-
-
+	*/
 
 
 
@@ -98,5 +110,4 @@ int	main(void)
 	printstack(b, 'b');
 	freestack(&a);	
 */
-	return (0);
 }

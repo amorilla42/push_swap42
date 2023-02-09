@@ -6,7 +6,7 @@
 /*   By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 13:02:59 by amorilla          #+#    #+#             */
-/*   Updated: 2023/02/09 23:38:29 by amorilla         ###   ########.fr       */
+/*   Updated: 2023/02/10 00:46:47 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,9 @@ void	print_error(void);
 int		*parse_input(int argnum, char **args);
 int		is_valid_number(char *str);
 int		num_in_range(long num);
-int		check_parse_int_conditions(char **lst_of_lst, int size, int *intlst);
+int		check_parse_int_conditions(char **lsts, int size, int *intlst, int cpy);
 void	free_all_list(char ***splited_str, int **list_int);
+int		check_no_dup(long num, int *lst, int current_size, int size);
+long	atoi_long(char *str);
 
 #endif
