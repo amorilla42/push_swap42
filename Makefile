@@ -6,14 +6,18 @@
 #    By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/18 18:41:38 by jdomingu          #+#    #+#              #
-#    Updated: 2023/02/05 21:53:58 by amorilla         ###   ########.fr        #
+#    Updated: 2023/02/09 21:06:12 by amorilla         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = 	push_swap
 
-SRCS = 	src/ft_push_swap.c src/ft_fill_stacks.c src/ft_movements.c \
-		src/ft_movements_reverse.c src/ft_parse_input.c
+SRCS = 	src/ft_push_swap.c \
+		src/ft_fill_stacks.c \
+		src/ft_movements.c \
+		src/ft_movements_reverse.c \
+		src/ft_parse_input.c \
+		src/ft_utilities.c
 
 OBJS = $(SRCS:.c=.o)
 
