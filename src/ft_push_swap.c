@@ -6,7 +6,7 @@
 /*   By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 20:42:05 by amorilla          #+#    #+#             */
-/*   Updated: 2023/02/10 00:39:28 by amorilla         ###   ########.fr       */
+/*   Updated: 2023/02/10 00:50:05 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	main(int argc, char **argv)
 	if (argc > 1)
 	{
 		lst = parse_input(argc, argv);
-		while (i < (*(&lst + 1) - lst))
+		while (i < 5)
 			printf("%d, ", lst[i++]);
 	}
 	exit(EXIT_SUCCESS);
