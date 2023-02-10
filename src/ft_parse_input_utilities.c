@@ -6,7 +6,7 @@
 /*   By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 21:04:39 by amorilla          #+#    #+#             */
-/*   Updated: 2023/02/10 00:45:03 by amorilla         ###   ########.fr       */
+/*   Updated: 2023/02/10 02:11:45 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	is_valid_number(char *str)
 
 int	num_in_range(long num)
 {
-	return (num > INT_MAX || num < INT_MIN);
+	return (num <= INT_MAX || num >= INT_MIN);
 }
 
 void	free_all_list(char ***splited_str, int **list_int)
@@ -62,6 +62,13 @@ int	check_parse_int_conditions(char **lsts, int size, int *intlst, int cpy)
 	long	num;
 
 	num = atoi_long(lsts[size]);
-	return (is_valid_number(lsts[size]) && num_in_range(num)
-		&& check_no_dup(num, intlst, size, cpy));
+	if (is_valid_number(lsts[size]))
+	{
+		if (num_in_range(num))
+		{
+			if (check_no_dup(num, intlst, size, cpy))
+				return (1);
+		}
+	}
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 21:53:35 by amorilla          #+#    #+#             */
-/*   Updated: 2023/02/10 00:43:41 by amorilla         ###   ########.fr       */
+/*   Updated: 2023/02/10 02:12:15 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,18 +109,19 @@ int	*parse_input(int argnum, char **args)
 	char	*temp;
 	int		idx;
 	int		*list_int;
+	char	*space_temp;
 
 	temp = calloctemp(argnum);
 	idx = 0;
-	while (++idx <= argnum)
+	while (++idx < argnum)
 	{
-		if (aux)
-			free(aux);
 		aux = ft_strjoin((char const *)temp, (char const *)args[idx]);
 		free(temp);
-		temp = ft_strdup((const char *)aux);
+		space_temp = ft_strjoin((const char *) aux, " ");
+		temp = ft_strdup((const char *)space_temp);
+		free(space_temp);
+		free(aux);
 	}
-	free(temp);
-	list_int = parse_input_to_int(&aux);
+	list_int = parse_input_to_int(&temp);
 	return (list_int);
 }
