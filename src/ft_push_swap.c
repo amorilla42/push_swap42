@@ -6,12 +6,12 @@
 /*   By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 20:42:05 by amorilla          #+#    #+#             */
-/*   Updated: 2023/02/10 02:12:20 by amorilla         ###   ########.fr       */
+/*   Updated: 2023/02/12 15:26:29 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
-#include <stdio.h>
+
 
 void	printstack(t_stack *s, char nameStack)
 {
@@ -46,14 +46,16 @@ void	freestack(t_stack **s)
 int	main(int argc, char **argv)
 {
 	int	*lst;
+	int	size;
 	int	i = 0;
 
 	if (argc > 1)
 	{
-		lst = parse_input(argc, argv);
-		while (i < 5)
-			printf("%d, ", lst[i++]);
+		lst = parse_input(argc, argv, &size);
+		while (i < size)
+			printf("%d,", lst[i++]);
 	}
+	printf(" \n %d \n", size);
 	exit(EXIT_SUCCESS);
 
 

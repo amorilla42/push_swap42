@@ -6,7 +6,7 @@
 /*   By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 21:53:35 by amorilla          #+#    #+#             */
-/*   Updated: 2023/02/10 02:12:15 by amorilla         ###   ########.fr       */
+/*   Updated: 2023/02/12 15:22:17 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ static int	number_of_elements(char *s, char c)
 	return (count);
 }
 
-static int	*parse_input_to_int(char **input)
+static int	*parse_input_to_int(char **input, int *size)
 {
 	int		*list_int;
 	char	**list_of_lists;
@@ -81,6 +81,7 @@ static int	*parse_input_to_int(char **input)
 	list_of_lists = ft_split((char const *)*input, ' ');
 	list_size = number_of_elements(*input, ' ');
 	list_size_copy = list_size;
+	*size = list_size_copy;
 	free(*input);
 	if (list_size == 0)
 		print_error();
@@ -103,7 +104,7 @@ static int	*parse_input_to_int(char **input)
 	temp     = is the string used as a buffer that is "freed" every cycle
 	list_int = is the list of integer ready to introduce in the stack "A"
 */
-int	*parse_input(int argnum, char **args)
+int	*parse_input(int argnum, char **args, int *size)
 {
 	char	*aux;
 	char	*temp;
@@ -122,6 +123,6 @@ int	*parse_input(int argnum, char **args)
 		free(space_temp);
 		free(aux);
 	}
-	list_int = parse_input_to_int(&temp);
+	list_int = parse_input_to_int(&temp, size);
 	return (list_int);
 }
