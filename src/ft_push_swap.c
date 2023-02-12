@@ -6,7 +6,7 @@
 /*   By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 20:42:05 by amorilla          #+#    #+#             */
-/*   Updated: 2023/02/12 15:26:29 by amorilla         ###   ########.fr       */
+/*   Updated: 2023/02/12 15:35:30 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,32 +45,26 @@ void	freestack(t_stack **s)
 
 int	main(int argc, char **argv)
 {
-	int	*lst;
-	int	size;
-	int	i = 0;
+	int		*lst;
+	int		size;
+	int		i;
+	t_stack	*a;
+	//t_stack	*b;
 
+	i = 0;
+	a = NULL;
+	//b = NULL;
 	if (argc > 1)
 	{
 		lst = parse_input(argc, argv, &size);
+		a = createnode(lst[i]);
+		i++;
 		while (i < size)
-			printf("%d,", lst[i++]);
+			addnode(a, lst[i]);
+		printstack(a, 'a');
 	}
-	printf(" \n %d \n", size);
+	
 	exit(EXIT_SUCCESS);
-
-
-
-	/*
-	int num;
-	char *str = "0000006";
-
-	num = ft_atoi(str);
-	ft_putnbr_fd(num, 1);
-	ft_putendl_fd(" ", 1);
-	ft_putnbr_fd(is_valid_number(str), 1);
-	ft_putendl_fd(" ", 1);
-	*/
-
 
 
 
