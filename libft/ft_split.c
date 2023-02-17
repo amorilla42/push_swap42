@@ -3,94 +3,89 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdomingu <jdomingu@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: amorilla <amorilla@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/01 11:02:36 by jdomingu          #+#    #+#             */
-/*   Updated: 2022/05/05 20:52:32 by jdomingu         ###   ########.fr       */
+/*   Created: 2022/05/03 15:27:15 by amorilla          #+#    #+#             */
+/*   Updated: 2022/05/07 19:15:00 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_nwords(char const *s, char c)
-{
-	int	count;
+static int	word_counter(const char *txt, char c)
+{	
+	int	numpal;
 	int	i;
+	int	anteriorsep;
 
-	count = 0;
+	numpal = 0;
+	anteriorsep = 0;
 	i = 0;
+	while (txt[i] != '\0')
+	{
+		if ((txt[i] != c) && (anteriorsep == 0))
+		{
+			anteriorsep = 1;
+			numpal++;
+		}
+		else if (txt[i] == c)
+			anteriorsep = 0;
+		i++;
+	}
+	return (numpal);
+}
+
+static char	*allocpalabra(const char *s, int inicio, int final)
+{
+	char	*str;
+	int		i;
+
+	i = 0;
+	str = (char *) malloc(sizeof(char) * (final - inicio + 1));
+	while (inicio < final)
+	{
+		str[i] = s[inicio];
+		i++;
+		inicio++;
+	}
+	str[i] = '\0';
+	return (str);
+}
+
+static int	initialize(char ***strstr, const char *s, char c, size_t *j)
+{
+	*j = 0;
 	if (!s)
 		return (0);
-	while (s[i])
-	{
-		while (s[i] && s[i] == c)
-			i++;
-		if (s[i])
-			count++;
-		while (s[i] && s[i] != c)
-			i++;
-	}
-	return (count);
-}
-
-static int	ft_wordlength(char const *s, char c, int i)
-{
-	int	j;
-
-	j = i;
-	while (s[j] && s[j] != c)
-		j++;
-	return (j - i);
-}
-
-static char	*ft_newword(char const *s, char c, int idx)
-{
-	char	*word;
-	int		i;
-	int		j;
-
-	i = 0;
-	j = ft_wordlength(s, c, idx);
-	word = (char *) malloc ((j + 1) * sizeof(char));
-	if (!word)
-	{
-		free(word);
+	*strstr = (char **)malloc(sizeof(char *) * (word_counter(s, c) + 1));
+	if (!*strstr)
 		return (0);
-	}
-	while (s[idx] && i < j)
-	{
-		word[i] = s[idx];
-		i++;
-		idx++;
-	}
-	word[i] = '\0';
-	return (word);
+	return (1);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**str;
-	int		i;
-	int		j;
+	char	**strstr;
+	size_t	i;
+	size_t	j;
+	int		idxseparador;
 
 	i = 0;
-	if (!s)
+	if (!initialize(&strstr, s, c, &j))
 		return (0);
-	j = 0;
-	str = (char **) ft_calloc((ft_nwords(s, c) + 1), sizeof(char *));
-	if (!str)
-		return (0);
-	while (s[j])
+	idxseparador = -1;
+	while (i <= ft_strlen(s))
 	{
-		while (s[j] && s[j] == c)
-			j++;
-		if (s[j])
+		if (s[i] != c && idxseparador < 0)
+			idxseparador = i;
+		else if ((s[i] == c || i == ft_strlen(s)) && idxseparador >= 0)
 		{
-			str[i] = ft_newword(s, c, j);
-			i++;
-		}
-		while (s[j] && s[j] != c)
+			strstr[j] = allocpalabra(s, idxseparador, i);
+			idxseparador = -1;
 			j++;
+		}
+		i++;
 	}
-	return (str);
+	strstr[j] = 0;
+	return (strstr);
 }

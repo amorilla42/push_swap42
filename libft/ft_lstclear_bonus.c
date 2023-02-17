@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdomingu <jdomingu@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: amorilla <amorilla@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/04 16:51:35 by jdomingu          #+#    #+#             */
-/*   Updated: 2022/05/05 20:13:46 by jdomingu         ###   ########.fr       */
+/*   Created: 2022/05/06 16:09:00 by amorilla          #+#    #+#             */
+/*   Updated: 2022/05/07 17:43:09 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,18 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list	*tmp;
+	t_list	*aux;
+	t_list	*aux2;
 
-	if (lst)
+	if (!lst || !del)
+		return ;
+	aux = *lst;
+	while (aux)
 	{
-		while (*lst)
-		{
-			tmp = (*lst)->next;
-			ft_lstdelone((*lst), del);
-			(*lst) = tmp;
-		}
+		aux2 = aux->next;
+		del(aux->content);
+		free(aux);
+		aux = aux2;
 	}
+	*lst = 0;
 }

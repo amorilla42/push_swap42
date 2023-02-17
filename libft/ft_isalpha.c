@@ -3,14 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdomingu <jdomingu@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: amorilla <amorilla@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/19 18:25:36 by jdomingu          #+#    #+#             */
-/*   Updated: 2022/05/05 20:07:48 by jdomingu         ###   ########.fr       */
+/*   Created: 2022/04/20 11:46:03 by amorilla          #+#    #+#             */
+/*   Updated: 2022/04/20 11:55:23 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+//#include <unistd.h>
 
 int	ft_isalpha(int c)
 {
 	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
 }
+/*
+int main(){
+	
+	if(ft_isalpha('b'))
+		write(1,"1",1);
+	if(ft_isalpha('c'))
+		write(1,"1",1);
+
+	return 0;
+}
+*/

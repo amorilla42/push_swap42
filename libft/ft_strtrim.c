@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdomingu <jdomingu@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: amorilla <amorilla@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/29 19:46:14 by jdomingu          #+#    #+#             */
-/*   Updated: 2022/05/05 20:58:41 by jdomingu         ###   ########.fr       */
+/*   Created: 2022/04/29 20:28:29 by amorilla          #+#    #+#             */
+/*   Updated: 2022/05/07 19:11:00 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_onset(char c, char const *set)
+static	int	ft_esta(char a, char const *set)
 {
 	size_t	i;
 
 	i = 0;
 	while (i < ft_strlen(set))
 	{
-		if (c == set[i])
+		if (a == set[i])
 			return (1);
 		i++;
 	}
@@ -28,26 +28,29 @@ static int	ft_onset(char c, char const *set)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*str;
+	char	*res;
 	size_t	i;
 	size_t	j;
-	size_t	k;
+	int		contres;
 
-	if (!s1 || !set)
-		return (0);
+	j = ft_strlen(s1)-1;
 	i = 0;
-	j = ft_strlen(s1) - 1;
-	k = 0;
-	while (s1[i] != '\0' && ft_onset(s1[i], set))
+	contres = 0;
+	while (ft_esta(s1[i], set) && s1[i] != '\0')
 		i++;
-	if (i - 1 == j)
+	if ((i - 1) == j)
 		return (ft_strdup(""));
-	while (j != 0 && ft_onset(s1[j], set))
+	while (ft_esta(s1[j], set) && j != 0)
 		j--;
-	str = (char *) ft_calloc((j - i + 2), sizeof(char));
-	if (!str)
+	res = malloc(sizeof(char) * (j - i + 2));
+	if (!res)
 		return (0);
 	while (i <= j)
-		str[k++] = s1[i++];
-	return (str);
+	{
+		res[contres] = s1[i];
+		i++;
+		contres++;
+	}
+	res[contres] = '\0';
+	return (res);
 }

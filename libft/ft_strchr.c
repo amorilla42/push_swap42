@@ -3,21 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdomingu <jdomingu@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: amorilla <amorilla@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/24 12:34:14 by jdomingu          #+#    #+#             */
-/*   Updated: 2022/05/19 18:45:49 by jdomingu         ###   ########.fr       */
+/*   Created: 2022/04/23 14:34:10 by amorilla          #+#    #+#             */
+/*   Updated: 2022/04/23 15:19:32 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strchr(const char *s, int c)
 {
-	int	i;
+	int	esta;
 
-	i = 0;
-	while (s[i] && s[i] != (char) c)
-		i++;
-	if (s[i] == (char) c)
-		return ((char *) s + i);
+	esta = 0;
+	while (*s != '\0' && !esta)
+	{
+		if (*s == (char)c)
+			esta = 1;
+		if (!esta)
+			s++;
+	}
+	if (esta || (*s == '\0' && *s == (char)c))
+		return ((char *)s);
 	return (0);
 }

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdomingu <jdomingu@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: amorilla <amorilla@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/19 18:52:31 by jdomingu          #+#    #+#             */
-/*   Updated: 2022/05/05 20:11:19 by jdomingu         ###   ########.fr       */
+/*   Created: 2022/04/21 15:27:36 by amorilla          #+#    #+#             */
+/*   Updated: 2022/04/21 15:46:27 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(int c)
+int	ft_isprint(int a)
 {
-	return (c >= ' ' && c < 127);
+	return (a >= 32 && a < 127);
 }

@@ -3,14 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdomingu <jdomingu@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: amorilla <amorilla@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/19 18:39:42 by jdomingu          #+#    #+#             */
-/*   Updated: 2022/05/05 20:08:58 by jdomingu         ###   ########.fr       */
+/*   Created: 2022/04/20 11:59:44 by amorilla          #+#    #+#             */
+/*   Updated: 2022/04/20 12:07:14 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+//#include <unistd.h>
 
 int	ft_isdigit(int c)
 {
 	return (c >= '0' && c <= '9');
 }
+/*
+int main(){
+
+	if(ft_isdigit('7'))
+		write(1,"1",1);
+	if(ft_isdigit('3'))
+		write(1,"1",1);
+
+	return 0;
+}
+*/

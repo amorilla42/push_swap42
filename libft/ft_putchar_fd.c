@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdomingu <jdomingu@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: amorilla <amorilla@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/01 15:27:25 by jdomingu          #+#    #+#             */
-/*   Updated: 2022/05/05 20:51:17 by jdomingu         ###   ########.fr       */
+/*   Created: 2022/05/04 20:01:33 by amorilla          #+#    #+#             */
+/*   Updated: 2022/05/04 20:03:24 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

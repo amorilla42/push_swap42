@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdomingu <jdomingu@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: amorilla <amorilla@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/21 18:32:37 by jdomingu          #+#    #+#             */
-/*   Updated: 2022/05/05 20:48:18 by jdomingu         ###   ########.fr       */
+/*   Created: 2022/04/21 21:14:05 by amorilla          #+#    #+#             */
+/*   Updated: 2022/04/23 13:25:58 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,19 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char	*d;
-	char	*s;
+	size_t	i;
+	char	*dest;
+	char	*source;
 
-	d = (char *) dst;
-	s = (char *) src;
-	if (d > s)
+	i = 0;
+	dest = (char *)dst;
+	source = (char *)src;
+	if (dest > source)
 	{
 		while (len--)
-			d[len] = s[len];
+			dest[len] = source[len];
 	}
-	else
-		ft_memcpy(d, s, len);
+	else if (dest < source)
+		ft_memcpy(dst, src, len);
 	return (dst);
 }

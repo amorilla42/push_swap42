@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdomingu <jdomingu@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: amorilla <amorilla@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/02 15:49:01 by jdomingu          #+#    #+#             */
-/*   Updated: 2022/05/05 21:09:49 by jdomingu         ###   ########.fr       */
+/*   Created: 2022/05/05 20:54:25 by amorilla          #+#    #+#             */
+/*   Updated: 2022/05/06 15:35:35 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

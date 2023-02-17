@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdomingu <jdomingu@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: amorilla <amorilla@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/19 20:07:55 by jdomingu          #+#    #+#             */
-/*   Updated: 2022/05/05 20:59:20 by jdomingu         ###   ########.fr       */
+/*   Created: 2022/04/23 14:25:25 by amorilla          #+#    #+#             */
+/*   Updated: 2022/04/23 14:27:52 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_tolower(int c)
 {
-	if (c >= 'A' && c <= 'Z')
-		return (c + ('a' - 'A'));
+	if (c <= 'Z' && c >= 'A')
+		return (c - ('A' - 'a'));
 	return (c);
 }

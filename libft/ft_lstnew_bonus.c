@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdomingu <jdomingu@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: amorilla <amorilla@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/02 15:06:15 by jdomingu          #+#    #+#             */
-/*   Updated: 2022/05/05 20:44:38 by jdomingu         ###   ########.fr       */
+/*   Created: 2022/05/05 18:42:09 by amorilla          #+#    #+#             */
+/*   Updated: 2022/05/07 17:18:29 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,11 @@
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list	*node;
+	t_list	*list;
 
-	node = (t_list *) malloc(sizeof(t_list));
-	if (!node)
+	list = (t_list *) ft_calloc(1, sizeof(t_list));
+	if (!list)
 		return (0);
-	node->content = content;
-	node->next = 0;
-	return (node);
+	list->content = content;
+	return (list);
 }

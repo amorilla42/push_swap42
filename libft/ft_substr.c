@@ -3,39 +3,45 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdomingu <jdomingu@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: amorilla <amorilla@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/26 17:37:53 by jdomingu          #+#    #+#             */
-/*   Updated: 2022/05/06 16:37:34 by jdomingu         ###   ########.fr       */
+/*   Created: 2022/04/29 16:57:24 by amorilla          #+#    #+#             */
+/*   Updated: 2022/05/07 18:59:11 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static size_t	ft_min(size_t a, size_t b)
+{
+	if (a < b)
+		return (a);
+	return (b);
+}
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*str;
-	size_t	slen;
-	size_t	minlen;
+	char	*res;
+	size_t	leni;
 	size_t	i;
+	size_t	lentotal;
 
 	if (!s)
 		return (0);
-	slen = ft_strlen(s);
-	if (start > slen)
-		return (ft_strdup(""));
-	if (slen - start < len)
-		minlen = slen - start;
+	leni = ft_strlen(s);
+	if (start > leni)
+		lentotal = 0;
 	else
-		minlen = len;
-	str = (char *) ft_calloc((minlen + 1), sizeof(char));
-	if (!str)
+		lentotal = ft_min(leni - start, len);
+	res = malloc((lentotal + 1) * sizeof(char));
+	if (!res)
 		return (0);
 	i = 0;
-	while (i < len && i + start < slen)
+	while (i < len && i + start < leni)
 	{
-		str[i] = s[start + i];
+		res[i] = s[start + i];
 		i++;
 	}
-	return (str);
+	res[i] = '\0';
+	return (res);
 }

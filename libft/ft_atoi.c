@@ -3,33 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdomingu <jdomingu@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: amorilla <amorilla@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/24 11:50:48 by jdomingu          #+#    #+#             */
-/*   Updated: 2022/05/05 20:04:43 by jdomingu         ###   ########.fr       */
+/*   Created: 2022/04/26 18:50:50 by amorilla          #+#    #+#             */
+/*   Updated: 2022/05/05 17:03:30 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_atoi(const char *str)
 {
-	int	res;
-	int	sign;
+	int	i;
+	int	signo;
+	int	num;
 
-	sign = 1;
-	res = 0;
-	while ((*str >= '\t' && *str <= '\r') || *str == ' ')
-		str++;
-	if (*str == '+' || *str == '-')
+	num = 0;
+	signo = 1;
+	i = 0;
+	while (str[i] == ' ' || (str[i] >= '\t' && str[i] <= '\r'))
+		i++;
+	if (str[i] == '-')
 	{
-		if (*str == '-')
-			sign = -sign;
-		str++;
+		signo *= -1;
+		i++;
 	}
-	while (*str != '\0' && *str >= '0' && *str <= '9')
+	else if (str[i] == '+')
+			i++;
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		res = res * 10 + (*str - '0');
-		str++;
+		num *= 10;
+		num += str[i] - '0';
+		i++;
 	}
-	res *= sign;
-	return (res);
+	return (num * signo);
 }

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdomingu <jdomingu@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: amorilla <amorilla@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/19 20:01:17 by jdomingu          #+#    #+#             */
-/*   Updated: 2022/05/05 21:03:18 by jdomingu         ###   ########.fr       */
+/*   Created: 2022/04/23 14:09:21 by amorilla          #+#    #+#             */
+/*   Updated: 2022/04/23 14:24:42 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_toupper(int c)
 {
-	if (c >= 'a' && c <= 'z')
-		return (c - ('a' - 'A'));
+	if (c <= 'z' && c >= 'a')
+		return (c + ('A' - 'a'));
 	return (c);
 }
