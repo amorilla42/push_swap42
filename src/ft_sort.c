@@ -6,7 +6,7 @@
 /*   By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 15:46:11 by amorilla          #+#    #+#             */
-/*   Updated: 2023/02/17 16:28:13 by amorilla         ###   ########.fr       */
+/*   Updated: 2023/02/19 17:03:28 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,14 @@ static t_stack	*get_min_node(t_stack *a)
 {
 	t_stack	*minimal_node;
 	t_stack	*aux;
-
-	minimal_node = a;
+	
 	aux = a;
-	while (aux->next)
+	while (aux && aux->idx != 0)
+	{
+		aux = aux->next;
+	}
+	minimal_node = aux;
+	while (aux)
 	{
 		if (aux->value < minimal_node->value && aux->idx == 0)
 			minimal_node = aux;

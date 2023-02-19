@@ -6,7 +6,7 @@
 /*   By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 18:45:18 by amorilla          #+#    #+#             */
-/*   Updated: 2023/02/19 16:06:10 by amorilla         ###   ########.fr       */
+/*   Updated: 2023/02/19 16:53:39 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_stack	*createnode(int** lst ,int num)
 {
 	t_stack	*st;
 
-	st = (t_stack *) malloc(sizeof(t_stack));
+	st = (t_stack *) ft_calloc(sizeof(t_stack), 1);
 	if (!st)
 	{
 		free(lst);
