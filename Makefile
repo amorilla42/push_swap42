@@ -6,7 +6,7 @@
 #    By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/18 18:41:38 by amorilla          #+#    #+#              #
-#    Updated: 2023/02/12 15:53:53 by amorilla         ###   ########.fr        #
+#    Updated: 2023/02/19 15:01:44 by amorilla         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ LIBFT = libft
 LIBFT_LIB = libft/libft.a
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 
 RM = rm -f
 

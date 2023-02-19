@@ -6,7 +6,7 @@
 /*   By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 21:04:39 by amorilla          #+#    #+#             */
-/*   Updated: 2023/02/10 02:11:45 by amorilla         ###   ########.fr       */
+/*   Updated: 2023/02/19 15:34:13 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	num_in_range(long num)
 	return (num <= INT_MAX || num >= INT_MIN);
 }
 
-void	free_all_list(char ***splited_str, int **list_int)
+void	free_all_list(char ***splited_str, int **list_int, int iserror)
 {
 	int	i;
 
@@ -53,8 +53,11 @@ void	free_all_list(char ***splited_str, int **list_int)
 		i++;
 	}
 	free(*splited_str);
-	free(*list_int);
-	print_error();
+	if (iserror)
+	{
+		free(*list_int);
+		print_error();
+	}
 }
 
 int	check_parse_int_conditions(char **lsts, int size, int *intlst, int cpy)

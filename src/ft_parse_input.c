@@ -6,7 +6,7 @@
 /*   By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 21:53:35 by amorilla          #+#    #+#             */
-/*   Updated: 2023/02/17 16:29:13 by amorilla         ###   ########.fr       */
+/*   Updated: 2023/02/19 15:15:58 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,15 +87,16 @@ static int	*parse_input_to_int(char **input, int *size)
 		print_error();
 	list_int = (int *)ft_calloc(sizeof(int), list_size + 1);
 	if (!list_int)
-		free_all_list(&list_of_lists, &list_int);
+		free_all_list(&list_of_lists, &list_int, 1);
 	while (list_size-- > 0)
 	{
 		if (check_parse_int_conditions(list_of_lists, list_size, list_int,
 				list_size_copy))
 			list_int[list_size] = (int) atoi_long(list_of_lists[list_size]);
 		else
-			free_all_list(&list_of_lists, &list_int);
+			free_all_list(&list_of_lists, &list_int, 1);
 	}
+	free_all_list(&list_of_lists, NULL, 0);
 	return (list_int);
 }
 

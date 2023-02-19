@@ -6,7 +6,7 @@
 /*   By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 20:42:05 by amorilla          #+#    #+#             */
-/*   Updated: 2023/02/17 16:01:46 by amorilla         ###   ########.fr       */
+/*   Updated: 2023/02/19 16:00:00 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,12 @@ void	freestack(t_stack **s)
 	}
 }
 
+void	freestacks(t_stack **a, t_stack **b)
+{
+	freestack(a);
+	freestack(b);	
+}
+
 int	main(int argc, char **argv)
 {
 	int		*lst;
@@ -57,12 +63,14 @@ int	main(int argc, char **argv)
 	if (argc > 1)
 	{
 		lst = parse_input(argc, argv, &size);
-		a = createnode(lst[i]);
+		a = createnode(&lst, lst[i]);
 		while (++i < size)
-			addnode(a, lst[i]);
+			addnode(a, &lst, lst[i]);
 		printstack(a, 'a');
 		sort_stacks(a, b, size);
 		printstack(a, 'a');
+		freestacks(&a, &b);
+		free(lst);
 	}
 	exit(EXIT_SUCCESS);
 }
