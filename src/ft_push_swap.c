@@ -6,7 +6,7 @@
 /*   By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 20:42:05 by amorilla          #+#    #+#             */
-/*   Updated: 2023/02/19 16:00:00 by amorilla         ###   ########.fr       */
+/*   Updated: 2023/02/19 18:15:50 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int	main(int argc, char **argv)
 		while (++i < size)
 			addnode(a, &lst, lst[i]);
 		printstack(a, 'a');
-		sort_stacks(a, b, size);
+		sort_stacks(&a, &b, size);
 		printstack(a, 'a');
 		freestacks(&a, &b);
 		free(lst);

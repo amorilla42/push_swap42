@@ -6,7 +6,7 @@
 /*   By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 13:02:59 by amorilla          #+#    #+#             */
-/*   Updated: 2023/02/19 16:05:37 by amorilla         ###   ########.fr       */
+/*   Updated: 2023/02/19 18:18:14 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,8 @@ void	rotate(t_stack **stack, char option);
 void	rr(t_stack **a, t_stack **b);
 void	reverserot(t_stack **stack, char option);
 void	rrr(t_stack **a, t_stack **b);
-void	addnode(t_stack *st, int** lst, int num);
-t_stack	*createnode(int** lst ,int num);
+void	addnode(t_stack *st, int **lst, int num);
+t_stack	*createnode(int **lst, int num);
 void	print_error(void);
 int		*parse_input(int argnum, char **args, int *size);
 int		is_valid_number(char *str);
@@ -64,7 +64,7 @@ int		check_parse_int_conditions(char **lsts, int size, int *intlst, int cpy);
 void	free_all_list(char ***splited_str, int **list_int, int iserror);
 int		check_no_dup(long num, int *lst, int current_size, int size);
 long	atoi_long(char *str);
-void	sort_stacks(t_stack *a, t_stack *b, int size);
+void	sort_stacks(t_stack **a, t_stack **b, int size);
 void	freestacks(t_stack **a, t_stack **b);
 void	freestack(t_stack **s);
 
