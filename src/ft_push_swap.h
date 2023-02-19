@@ -6,7 +6,7 @@
 /*   By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 13:02:59 by amorilla          #+#    #+#             */
-/*   Updated: 2023/02/19 18:18:14 by amorilla         ###   ########.fr       */
+/*   Updated: 2023/02/19 19:16:28 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,7 @@ long	atoi_long(char *str);
 void	sort_stacks(t_stack **a, t_stack **b, int size);
 void	freestacks(t_stack **a, t_stack **b);
 void	freestack(t_stack **s);
+void	sort_three_numbers(t_stack **a);
+void	sort_more_than_three(t_stack **a, t_stack **b, int size);
 
 #endif

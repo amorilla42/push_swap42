@@ -6,7 +6,7 @@
 /*   By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 15:46:11 by amorilla          #+#    #+#             */
-/*   Updated: 2023/02/19 18:27:04 by amorilla         ###   ########.fr       */
+/*   Updated: 2023/02/19 20:28:29 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,13 +70,12 @@ void	sort_stacks(t_stack **a, t_stack **b, int size)
 		if (size == 2)
 			sa(a);
 		if (size == 3)
-			order_three_numbers(a);
+			sort_three_numbers(a);
 		if (size > 3)
-			order_more_than_three(a, b, size);
+			sort_more_than_three(a, b, size);
 	}
 	else
 	{
 		ft_putstr_fd("ORDENADISIMO \n", 1);
 	}
-	
 }
