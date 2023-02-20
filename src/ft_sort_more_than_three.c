@@ -59,8 +59,14 @@ static void	calculate_positions(t_stack *s)
 	}
 }
 
+static void	assing_target_pos(t_stack **a, t_stack **b)
+{
+	
+}
+
 void	sort_more_than_three(t_stack **a, t_stack **b, int size)
 {
 	push_all_except_three(a, b, size);
 	calculate_positions(*a);
+	calculate_positions(*b);
 }
