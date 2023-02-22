@@ -57,6 +57,7 @@ int	main(int argc, char **argv)
 	t_stack	*a;
 	t_stack	*b;
 
+		
 	i = 0;
 	a = NULL;
 	b = NULL;
