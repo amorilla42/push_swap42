@@ -6,7 +6,7 @@
 /*   By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 19:18:28 by amorilla          #+#    #+#             */
-/*   Updated: 2023/02/22 17:05:12 by amorilla         ###   ########.fr       */
+/*   Updated: 2023/02/22 19:38:17 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,8 @@ static void	calculate_positions(t_stack *s)
 
 static void	assing_target_pos(t_stack **a, t_stack **b)
 {
-	
+	if (check_biggest_index(a, b))
+		
 }
 
 void	sort_more_than_three(t_stack **a, t_stack **b, int size)
