@@ -6,7 +6,7 @@
 /*   By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 19:02:44 by amorilla          #+#    #+#             */
-/*   Updated: 2023/02/22 20:04:14 by amorilla         ###   ########.fr       */
+/*   Updated: 2023/02/22 20:22:19 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,31 +51,38 @@ static	int	get_biggest_index(t_stack **a)
 void	assing_target_pos_lower_idx(t_stack **a, t_stack **b)
 {
 	t_stack	*aux_a;
-	t_stack	*aux_b;
 	int		closer_idx;
 	int		target_pos;
 
-	aux_b = *b;
-	while (aux_b)
+	aux_a = *a;
+	closer_idx = get_biggest_index(aux_a);
+	while (aux_a)
 	{
-		aux_a = *a;
-		closer_idx = get_biggest_index(aux_a);
-		while (aux_a)
+		if ((*b)->idx < aux_a->idx && closer_idx > aux_a->idx)
 		{
-			if (aux_b->idx < aux_a->idx && closer_idx > aux_a->idx)
-				closer_idx = aux_a->idx;
-			
-
-
-
-			
-			aux_a = aux_a->next;
+			closer_idx = aux_a->idx;
+			target_pos = aux_a->pos;
 		}
-		aux_b = aux_b->next;
+		aux_a = aux_a->next;
 	}
+	(*b)->target_pos = target_pos;
 }
 
 void	assing_target_pos_biggest_idx(t_stack **a, t_stack **b)
 {
-	
+	t_stack	*aux_a;
+	int		biggest_idx;
+	int		target_pos;
+
+	aux_a = *a;
+	biggest_idx = get_biggest_index(aux_a);
+	while (aux_a)
+	{
+		if (aux_a->idx == biggest_idx)
+		{
+			target_pos = aux_a->pos+1;
+		}
+		aux_a = aux_a->next;
+	}
+	(*b)->target_pos = target_pos;
 }
