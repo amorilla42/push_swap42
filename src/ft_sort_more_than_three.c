@@ -6,7 +6,7 @@
 /*   By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 19:18:28 by amorilla          #+#    #+#             */
-/*   Updated: 2023/02/19 21:09:22 by amorilla         ###   ########.fr       */
+/*   Updated: 2023/02/22 17:05:12 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static void	calculate_positions(t_stack *s)
 {
 	t_stack *aux;
 	int	pos;
-
+ 
 	pos = 0;
 	aux = s;
 	while (aux)
