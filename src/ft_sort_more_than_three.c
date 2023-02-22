@@ -6,7 +6,7 @@
 /*   By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 19:18:28 by amorilla          #+#    #+#             */
-/*   Updated: 2023/02/22 20:28:29 by amorilla         ###   ########.fr       */
+/*   Updated: 2023/02/22 20:36:30 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ static void	assing_target_pos(t_stack **a, t_stack **b)
 	aux_b = *b;
 	while (aux_b)
 	{
-		if (check_biggest_index(a, b))
+		if (check_biggest_index(a, &aux_b))
 		{
 			assing_target_pos_biggest_idx(a, &aux_b);
 		}

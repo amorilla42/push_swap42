@@ -6,7 +6,7 @@
 /*   By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 19:02:44 by amorilla          #+#    #+#             */
-/*   Updated: 2023/02/22 20:22:19 by amorilla         ###   ########.fr       */
+/*   Updated: 2023/02/22 20:31:11 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	check_biggest_index(t_stack **a, t_stack **b)
 	is_biggest = 1;
 	while (aux_a && is_biggest)
 	{
-		if (aux_a->idx < *b->idx)
+		if (aux_a->idx < (*b)->idx)
 			is_biggest = 0;
 		aux_a = aux_a->next;
 	}
@@ -55,7 +55,7 @@ void	assing_target_pos_lower_idx(t_stack **a, t_stack **b)
 	int		target_pos;
 
 	aux_a = *a;
-	closer_idx = get_biggest_index(aux_a);
+	closer_idx = get_biggest_index(&aux_a);
 	while (aux_a)
 	{
 		if ((*b)->idx < aux_a->idx && closer_idx > aux_a->idx)
@@ -75,7 +75,7 @@ void	assing_target_pos_biggest_idx(t_stack **a, t_stack **b)
 	int		target_pos;
 
 	aux_a = *a;
-	biggest_idx = get_biggest_index(aux_a);
+	biggest_idx = get_biggest_index(&aux_a);
 	while (aux_a)
 	{
 		if (aux_a->idx == biggest_idx)
