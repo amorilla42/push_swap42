@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_push_swap.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: desmo <desmo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 20:42:05 by amorilla          #+#    #+#             */
-/*   Updated: 2023/02/22 02:52:04 by desmo            ###   ########.fr       */
+/*   Updated: 2023/02/22 03:16:34 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
-
 
 void	printstack(t_stack *s, char nameStack)
 {
@@ -57,7 +56,6 @@ int	main(int argc, char **argv)
 	t_stack	*a;
 	t_stack	*b;
 
-			
 	i = 0;
 	a = NULL;
 	b = NULL;
