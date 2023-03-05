@@ -6,7 +6,7 @@
 /*   By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 15:46:11 by amorilla          #+#    #+#             */
-/*   Updated: 2023/02/19 20:28:29 by amorilla         ###   ########.fr       */
+/*   Updated: 2023/03/05 18:50:13 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static t_stack	*get_min_node(t_stack *a)
 	return (minimal_node);
 }
 
-void	asign_indexes(t_stack *a, int size)
+void	assign_indexes(t_stack *a, int size)
 {
 	int		index;
 
@@ -62,20 +62,14 @@ int	is_sorted(t_stack *a)
 
 void	sort_stacks(t_stack **a, t_stack **b, int size)
 {
-	(void)b;
-	asign_indexes(*a, size);
+	assign_indexes(*a, size);
 	if (!is_sorted(*a))
 	{
-		ft_putstr_fd("DESORDENADISIMO \n", 1);
 		if (size == 2)
 			sa(a);
 		if (size == 3)
 			sort_three_numbers(a);
 		if (size > 3)
 			sort_more_than_three(a, b, size);
-	}
-	else
-	{
-		ft_putstr_fd("ORDENADISIMO \n", 1);
 	}
 }

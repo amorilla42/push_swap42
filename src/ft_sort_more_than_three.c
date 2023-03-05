@@ -6,7 +6,7 @@
 /*   By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 19:18:28 by amorilla          #+#    #+#             */
-/*   Updated: 2023/03/05 16:04:49 by amorilla         ###   ########.fr       */
+/*   Updated: 2023/03/05 18:49:53 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	calculate_positions(t_stack *s)
 	}
 }
 
-void	assing_target_pos(t_stack **a, t_stack **b)
+void	assign_target_pos(t_stack **a, t_stack **b)
 {
 	t_stack	*aux_b;
 
@@ -72,7 +72,7 @@ void	assing_target_pos(t_stack **a, t_stack **b)
 		//}
 		//else
 		//{
-			assing_target_pos_lower_idx(a, &aux_b);
+			assign_target_pos_lower_idx(a, &aux_b);
 		//}
 		aux_b = aux_b->next;
 	}
@@ -80,8 +80,17 @@ void	assing_target_pos(t_stack **a, t_stack **b)
 
 void	sort_more_than_three(t_stack **a, t_stack **b, int size)
 {
+	int	size_b;
+	int size_a;
+
 	push_all_except_three(a, b, size);
+	size_a = 3;
+	size_b = size - 3;
+	//esto se va a repetir
 	calculate_positions(*a);
 	calculate_positions(*b);
-	assing_target_pos(a, b);
+	assign_target_pos(a, b);
+	assign_costs(a, b, &size_a, &size_b);
+
+	//hasta aqui se repite hasta que:  [A este ordenado] y [B este vacio]
 }
