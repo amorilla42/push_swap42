@@ -6,7 +6,7 @@
 /*   By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 20:42:05 by amorilla          #+#    #+#             */
-/*   Updated: 2023/02/22 20:32:35 by amorilla         ###   ########.fr       */
+/*   Updated: 2023/03/05 16:32:33 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	freestack(t_stack **s)
 void	freestacks(t_stack **a, t_stack **b)
 {
 	freestack(a);
-	freestack(b);	
+	freestack(b);
 }
 
 int	main(int argc, char **argv)
@@ -62,6 +62,26 @@ int	main(int argc, char **argv)
 	if (argc > 1)
 	{
 		lst = parse_input(argc, argv, &size);
+		/*
+		//testeos del pos_objetivo cuando     ./push_swap 1 6 2 4 5 3 7
+		a = createnode(&lst, lst[i]);
+		while (++i < 3)
+			addnode(a, &lst, lst[i]);
+		b = createnode(&lst, lst[i]);
+		while (++i < 7)
+			addnode(b, &lst, lst[i]);
+		a->idx = 0;
+		a->next->idx = 5;
+		a->next->next->idx = 1;
+		b->idx = 3;
+		b->next->idx = 4;
+		b->next->next->idx = 2;
+		b->next->next->next->idx = 6;
+		calculate_positions(a);
+		calculate_positions(b);
+		assing_target_pos(&a, &b);
+		*/
+		
 		a = createnode(&lst, lst[i]);
 		while (++i < size)
 			addnode(a, &lst, lst[i]);
@@ -69,6 +89,30 @@ int	main(int argc, char **argv)
 		sort_stacks(&a, &b, size);
 		printstack(a, 'a');
 		printstack(b, 'b');
+		/* testeos futurros
+		push(&b, &a , 'a');
+		calculate_positions(a);
+		calculate_positions(b);
+		assing_target_pos(&a, &b);
+		printstack(a, 'a');
+		printstack(b, 'b');
+		
+		rotate(&a , 'a');
+		calculate_positions(a);
+		calculate_positions(b);
+		assing_target_pos(&a, &b);
+		printstack(a, 'a');
+		printstack(b, 'b');
+
+		rotate(&b , 'b');
+		push(&b, &a , 'a');
+		calculate_positions(a);
+		calculate_positions(b);
+		assing_target_pos(&a, &b);
+		printstack(a, 'a');
+		printstack(b, 'b');
+		//hasta aqui
+		*/
 		freestacks(&a, &b);
 		free(lst);
 	}
