@@ -6,7 +6,7 @@
 /*   By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 20:42:05 by amorilla          #+#    #+#             */
-/*   Updated: 2023/03/05 18:33:43 by amorilla         ###   ########.fr       */
+/*   Updated: 2023/03/05 19:32:19 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	printstack(t_stack *s, char nameStack)
 		printf("Pila %c : \n", nameStack);
 		while (s != NULL)
 		{
-			printf("index %d value %d pos %d target_pos %d\n", s->idx, s->value, s->pos, s->target_pos);
+			printf("index %d value %d pos %d target_pos %d cost_b %d\n", s->idx, s->value, s->pos, s->target_pos, s->cost_b);
 			s = s->next;
 		}
 		printf("\n");

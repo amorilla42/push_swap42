@@ -6,7 +6,7 @@
 /*   By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 13:02:59 by amorilla          #+#    #+#             */
-/*   Updated: 2023/03/05 18:51:21 by amorilla         ###   ########.fr       */
+/*   Updated: 2023/03/05 19:00:25 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,6 @@ void	sort_more_than_three(t_stack **a, t_stack **b, int size);
 void	assign_target_pos_lower_idx(t_stack **a, t_stack **b);
 void	calculate_positions(t_stack *s);
 void	assign_target_pos(t_stack **a, t_stack **b);
-void	assign_costs(t_stack **a, t_stack **b, int *size_a, int *size_b);
+void	assign_costs(t_stack **a, t_stack **b, int size_a, int size_b);
 
 #endif

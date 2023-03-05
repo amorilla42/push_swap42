@@ -6,7 +6,7 @@
 #    By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/18 18:41:38 by amorilla          #+#    #+#              #
-#    Updated: 2023/03/05 17:37:31 by amorilla         ###   ########.fr        #
+#    Updated: 2023/03/05 19:59:47 by amorilla         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ RM = rm -f
 
 all:			$(NAME)
 
-$(NAME):		$(LIBFT_LIB)
+$(NAME):		$(LIBFT_LIB) $(SRCS)
 				$(CC) $(CFLAGS) $(SRCS) $(LIBFT_LIB) -o $(NAME)
 
 $(LIBFT_LIB):	
