@@ -6,7 +6,7 @@
 /*   By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 17:37:11 by amorilla          #+#    #+#             */
-/*   Updated: 2023/03/06 20:26:32 by amorilla         ###   ########.fr       */
+/*   Updated: 2023/03/06 20:38:30 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,10 @@ static void	calc_cost_b(t_stack **b, int size_b)
 	Optimal number of moves for the element in the target_pos 
 	to end up at the top of stack A
 */
-static void	calc_cost_a(t_stack **a, t_stack **b, int size_a)
+static void	calc_cost_a(t_stack **b, int size_a)
 {
-	//t_stack	*aux_a;
 	t_stack	*aux_b;
 
-	//aux_a = *a;
-	(void)a;
 	aux_b = *b;
 	while (aux_b)
 	{
@@ -56,5 +53,5 @@ static void	calc_cost_a(t_stack **a, t_stack **b, int size_a)
 void	assign_costs(t_stack **a, t_stack **b, int size_a, int size_b)
 {
 	calc_cost_b(b, size_b);
-	calc_cost_a(a, b, size_a);
+	calc_cost_a(b, size_a);
 }
