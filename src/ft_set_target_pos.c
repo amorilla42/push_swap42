@@ -6,7 +6,7 @@
 /*   By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 19:02:44 by amorilla          #+#    #+#             */
-/*   Updated: 2023/03/05 18:49:18 by amorilla         ###   ########.fr       */
+/*   Updated: 2023/03/06 19:40:29 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,6 @@ void	assign_target_pos_lower_idx(t_stack **a, t_stack **b)
 
 	aux_a = *a;
 	closer_idx = get_biggest_index(&aux_a);
-	ft_putnbr_fd(closer_idx,1);
-	
 	while (aux_a)
 	{
 		if ((*b)->idx < aux_a->idx && closer_idx > aux_a->idx)

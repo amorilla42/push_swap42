@@ -6,7 +6,7 @@
 /*   By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 19:18:28 by amorilla          #+#    #+#             */
-/*   Updated: 2023/03/05 19:00:03 by amorilla         ###   ########.fr       */
+/*   Updated: 2023/03/06 19:48:43 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static void	push_all_except_three(t_stack **a, t_stack **b, int size)
 	current_size = size;
 	while (current_size > half && current_size >= 3)
 	{
-		if ((*a)->idx <= half)
+		if ((*a)->idx < half) //antes era menor o igual
 			push_and_decrease(a, b, &current_size);
 		else
 			rotate(a, 'a');
@@ -46,7 +46,7 @@ static void	push_all_except_three(t_stack **a, t_stack **b, int size)
 
 void	calculate_positions(t_stack *s)
 {
-	t_stack *aux;
+	t_stack	*aux;
 	int	pos;
  
 	pos = 0;

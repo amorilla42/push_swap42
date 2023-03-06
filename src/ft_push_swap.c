@@ -6,7 +6,7 @@
 /*   By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 20:42:05 by amorilla          #+#    #+#             */
-/*   Updated: 2023/03/05 19:32:19 by amorilla         ###   ########.fr       */
+/*   Updated: 2023/03/06 20:07:53 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,11 +89,14 @@ int	main(int argc, char **argv)
 		sort_stacks(&a, &b, size);
 		printstack(a, 'a');
 		printstack(b, 'b');
+		
+
 		/* testeos futurros
 		push(&b, &a , 'a');
 		calculate_positions(a);
 		calculate_positions(b);
-		assing_target_pos(&a, &b);
+		assign_target_pos(&a, &b);
+		assign_costs(&a, &b, 4, size - 4);
 		printstack(a, 'a');
 		printstack(b, 'b');
 		

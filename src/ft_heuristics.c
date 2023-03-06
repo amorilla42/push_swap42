@@ -6,7 +6,7 @@
 /*   By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 17:37:11 by amorilla          #+#    #+#             */
-/*   Updated: 2023/03/05 20:01:28 by amorilla         ###   ########.fr       */
+/*   Updated: 2023/03/06 20:10:48 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@
 */
 static void	calc_cost_b(t_stack **b, int size_b)
 {
-	t_stack *aux_b;
+	t_stack	*aux_b;
 
 	aux_b = *b;
 	while (aux_b)
 	{
-		if((aux_b->pos + 1) <= size_b/2 + 1)
+		if ((aux_b->pos + 1) <= size_b / 2 + 1)
 			aux_b->cost_b = aux_b->pos;
 		else
 			aux_b->cost_b = aux_b->pos - size_b;
