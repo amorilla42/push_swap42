@@ -6,7 +6,7 @@
 /*   By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 17:37:11 by amorilla          #+#    #+#             */
-/*   Updated: 2023/03/06 20:38:30 by amorilla         ###   ########.fr       */
+/*   Updated: 2023/03/06 20:46:05 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static void	calc_cost_a(t_stack **b, int size_a)
 	}
 }
 
-void	assign_costs(t_stack **a, t_stack **b, int size_a, int size_b)
+void	assign_costs(t_stack **b, int size_a, int size_b)
 {
 	calc_cost_b(b, size_b);
 	calc_cost_a(b, size_a);

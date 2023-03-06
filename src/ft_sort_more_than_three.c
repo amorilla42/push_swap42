@@ -6,7 +6,7 @@
 /*   By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 19:18:28 by amorilla          #+#    #+#             */
-/*   Updated: 2023/03/06 19:48:43 by amorilla         ###   ########.fr       */
+/*   Updated: 2023/03/06 20:47:07 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void	assign_target_pos(t_stack **a, t_stack **b)
 void	sort_more_than_three(t_stack **a, t_stack **b, int size)
 {
 	int	size_b;
-	int size_a;
+	int	size_a;
 
 	push_all_except_three(a, b, size);
 	size_a = 3;
@@ -90,7 +90,7 @@ void	sort_more_than_three(t_stack **a, t_stack **b, int size)
 	calculate_positions(*a);
 	calculate_positions(*b);
 	assign_target_pos(a, b);
-	assign_costs(a, b, size_a, size_b);
+	assign_costs(b, size_a, size_b);
 
 	//hasta aqui se repite hasta que:  [A este ordenado] y [B este vacio]
 }
