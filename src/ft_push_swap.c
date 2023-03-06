@@ -6,7 +6,7 @@
 /*   By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 20:42:05 by amorilla          #+#    #+#             */
-/*   Updated: 2023/03/06 20:07:53 by amorilla         ###   ########.fr       */
+/*   Updated: 2023/03/06 20:30:34 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	printstack(t_stack *s, char nameStack)
 		printf("Pila %c : \n", nameStack);
 		while (s != NULL)
 		{
-			printf("index %d value %d pos %d target_pos %d cost_b %d\n", s->idx, s->value, s->pos, s->target_pos, s->cost_b);
+			printf("index %d value %d pos %d target_pos %d cost_b %d cost_a %d\n", s->idx, s->value, s->pos, s->target_pos, s->cost_b, s->cost_a);
 			s = s->next;
 		}
 		printf("\n");
@@ -81,7 +81,7 @@ int	main(int argc, char **argv)
 		calculate_positions(b);
 		assing_target_pos(&a, &b);
 		*/
-		
+
 		a = createnode(&lst, lst[i]);
 		while (++i < size)
 			addnode(a, &lst, lst[i]);
@@ -89,9 +89,11 @@ int	main(int argc, char **argv)
 		sort_stacks(&a, &b, size);
 		printstack(a, 'a');
 		printstack(b, 'b');
-		
+
+
 
 		/* testeos futurros
+
 		push(&b, &a , 'a');
 		calculate_positions(a);
 		calculate_positions(b);
