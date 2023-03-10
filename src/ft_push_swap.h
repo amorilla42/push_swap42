@@ -6,7 +6,7 @@
 /*   By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 13:02:59 by amorilla          #+#    #+#             */
-/*   Updated: 2023/03/10 14:01:34 by amorilla         ###   ########.fr       */
+/*   Updated: 2023/03/10 14:10:09 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,4 +75,5 @@ void	assign_target_pos(t_stack **a, t_stack **b);
 void	assign_costs(t_stack **b, int size_a, int size_b);
 void	exec_optimal_movs(t_stack **a, t_stack **b, int *size_a, int *size_b);
 void	rotate_until_sorted(t_stack **a, int size_a);
+int		absv(int num);
 #endif

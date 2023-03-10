@@ -6,7 +6,7 @@
 /*   By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 17:37:11 by amorilla          #+#    #+#             */
-/*   Updated: 2023/03/06 20:46:05 by amorilla         ###   ########.fr       */
+/*   Updated: 2023/03/10 14:09:50 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,12 @@ void	assign_costs(t_stack **b, int size_a, int size_b)
 {
 	calc_cost_b(b, size_b);
 	calc_cost_a(b, size_a);
+}
+
+//absolute value of a number
+int	absv(int num)
+{
+	if (num < 0)
+		return (num * -1);
+	return (num);
 }

@@ -6,18 +6,12 @@
 /*   By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 12:14:02 by amorilla          #+#    #+#             */
-/*   Updated: 2023/03/10 14:01:06 by amorilla         ###   ########.fr       */
+/*   Updated: 2023/03/10 14:14:36 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
-static int	absv(int num)
-{
-	if (num < 0)
-		return (num * -1);
-	return (num);
-}
 
 static void	execdoublemoves(t_stack **a, t_stack **b, int *movsa, int *movsb)
 {
@@ -87,10 +81,9 @@ void	exec_optimal_movs(t_stack **a, t_stack **b, int *size_a, int *size_b)
 	
 }
 
-void	rotate_until_sorted(t_stack **a, int size_a)
+static int calc_num_rotates(t_stack **a, int size_a)
 {
 	t_stack	*auxa;
-	int		num_rotates;
 
 	auxa = *a;
 	calculate_positions(*a);
@@ -99,12 +92,20 @@ void	rotate_until_sorted(t_stack **a, int size_a)
 		if(auxa->idx == 1)
 		{
 			if ((auxa->pos + 1) <= size_a / 2 + 1)
-				num_rotates = auxa->pos;
+				return (auxa->pos);
 			else
-				num_rotates = auxa->pos - size_a;
+				return (auxa->pos - size_a);
 		}
 		auxa = auxa->next;
 	}
+	return (0);
+}
+
+void	rotate_until_sorted(t_stack **a, int size_a)
+{
+	int	num_rotates;
+
+	num_rotates = calc_num_rotates(a, size_a);
 	while (num_rotates != 0)
 	{
 		if (num_rotates < 0)
