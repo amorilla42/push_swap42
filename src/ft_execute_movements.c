@@ -6,7 +6,7 @@
 /*   By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 12:14:02 by amorilla          #+#    #+#             */
-/*   Updated: 2023/03/10 13:22:56 by amorilla         ###   ########.fr       */
+/*   Updated: 2023/03/10 14:01:06 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,4 +85,37 @@ void	exec_optimal_movs(t_stack **a, t_stack **b, int *size_a, int *size_b)
 	(*size_a)++;
 	(*size_b)--;
 	
+}
+
+void	rotate_until_sorted(t_stack **a, int size_a)
+{
+	t_stack	*auxa;
+	int		num_rotates;
+
+	auxa = *a;
+	calculate_positions(*a);
+	while (auxa)
+	{
+		if(auxa->idx == 1)
+		{
+			if ((auxa->pos + 1) <= size_a / 2 + 1)
+				num_rotates = auxa->pos;
+			else
+				num_rotates = auxa->pos - size_a;
+		}
+		auxa = auxa->next;
+	}
+	while (num_rotates != 0)
+	{
+		if (num_rotates < 0)
+		{
+			reverserot(a, 'a');
+			num_rotates++;
+		}
+		else
+		{
+			rotate(a, 'a');
+			num_rotates--;
+		}
+	}
 }
