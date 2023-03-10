@@ -6,7 +6,7 @@
 /*   By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 13:02:59 by amorilla          #+#    #+#             */
-/*   Updated: 2023/03/06 20:46:24 by amorilla         ###   ########.fr       */
+/*   Updated: 2023/03/10 12:18:42 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,5 +73,6 @@ void	assign_target_pos_lower_idx(t_stack **a, t_stack **b);
 void	calculate_positions(t_stack *s);
 void	assign_target_pos(t_stack **a, t_stack **b);
 void	assign_costs(t_stack **b, int size_a, int size_b);
+void	exec_optimal_movs(t_stack **a, t_stack **b, int *size_a, int *size_b);
 
 #endif

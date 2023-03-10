@@ -6,7 +6,7 @@
 /*   By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 19:18:28 by amorilla          #+#    #+#             */
-/*   Updated: 2023/03/06 20:47:07 by amorilla         ###   ########.fr       */
+/*   Updated: 2023/03/10 12:16:33 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,7 @@ void	sort_more_than_three(t_stack **a, t_stack **b, int size)
 	calculate_positions(*b);
 	assign_target_pos(a, b);
 	assign_costs(b, size_a, size_b);
+	exec_optimal_movs(a, b, &size_a, &size_b);
 
 	//hasta aqui se repite hasta que:  [A este ordenado] y [B este vacio]
 }

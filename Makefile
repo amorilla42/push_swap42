@@ -6,7 +6,7 @@
 #    By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/18 18:41:38 by amorilla          #+#    #+#              #
-#    Updated: 2023/03/05 19:59:47 by amorilla         ###   ########.fr        #
+#    Updated: 2023/03/10 12:14:25 by amorilla         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,8 @@ SRCS = 	src/ft_push_swap.c \
 		src/ft_sort_three_numbers.c \
 		src/ft_sort_more_than_three.c \
 		src/ft_set_target_pos.c \
-		src/ft_heuristics.c
+		src/ft_heuristics.c \
+		src/ft_execute_movements.c
 
 OBJS = $(SRCS:.c=.o)
 
