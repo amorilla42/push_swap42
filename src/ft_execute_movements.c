@@ -6,12 +6,11 @@
 /*   By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 12:14:02 by amorilla          #+#    #+#             */
-/*   Updated: 2023/03/10 14:14:36 by amorilla         ###   ########.fr       */
+/*   Updated: 2023/03/11 18:32:43 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
-
 
 static void	execdoublemoves(t_stack **a, t_stack **b, int *movsa, int *movsb)
 {
@@ -43,7 +42,7 @@ static void	executemovs(t_stack **a, t_stack **b, int movsa, int movsb)
 		else if (movsb < 0)
 		{
 			reverserot(b, 'b');
-			movsa++;
+			movsb++;
 		}
 		else if (movsa > 0)
 		{
@@ -60,8 +59,8 @@ static void	executemovs(t_stack **a, t_stack **b, int movsa, int movsb)
 
 void	exec_optimal_movs(t_stack **a, t_stack **b, int *size_a, int *size_b)
 {
-	t_stack *best_node;
-	t_stack *auxb;
+	t_stack	*best_node;
+	t_stack	*auxb;
 
 	auxb = *b;
 	best_node = *b;
@@ -78,10 +77,9 @@ void	exec_optimal_movs(t_stack **a, t_stack **b, int *size_a, int *size_b)
 	push(b, a, 'a');
 	(*size_a)++;
 	(*size_b)--;
-	
 }
 
-static int calc_num_rotates(t_stack **a, int size_a)
+static int	calc_num_rotates(t_stack **a, int size_a)
 {
 	t_stack	*auxa;
 
@@ -89,7 +87,7 @@ static int calc_num_rotates(t_stack **a, int size_a)
 	calculate_positions(*a);
 	while (auxa)
 	{
-		if(auxa->idx == 1)
+		if (auxa->idx == 1)
 		{
 			if ((auxa->pos + 1) <= size_a / 2 + 1)
 				return (auxa->pos);

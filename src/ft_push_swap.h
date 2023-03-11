@@ -6,7 +6,7 @@
 /*   By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 13:02:59 by amorilla          #+#    #+#             */
-/*   Updated: 2023/03/10 14:10:09 by amorilla         ###   ########.fr       */
+/*   Updated: 2023/03/11 18:43:10 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,25 +17,6 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include "../libft/libft.h"
-# include <stdio.h>
-
-//value: 	  numero que hay que ordenar.
-
-//idx:   	  el indice en la lista de TODOS los valores.
-
-//pos:		  su posicion actual en la pila.
-
-//target_pos: para los elementos en B, la posicion donde 
-//			  deberia estar en A cuando este ordenado.
-
-//cost_a:	  cuantas acciones necesito para rotar A para que 
-//			  el elemento en la posicion target llegue al 
-//			  top del stack A.
-
-//cost_b:	  cuantas acciones necesito para rotar B para que 
-//			  el elemento llegue al top del stack B.
-
-//next:		  puntero al elemento siguiente de la pila.
 
 typedef struct s_stack
 {

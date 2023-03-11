@@ -6,7 +6,7 @@
 /*   By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 19:18:28 by amorilla          #+#    #+#             */
-/*   Updated: 2023/03/10 13:48:20 by amorilla         ###   ########.fr       */
+/*   Updated: 2023/03/11 18:35:02 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static void	push_all_except_three(t_stack **a, t_stack **b, int size)
 	current_size = size;
 	while (current_size > half && current_size >= 3)
 	{
-		if ((*a)->idx < half) //antes era menor o igual
+		if ((*a)->idx < half)
 			push_and_decrease(a, b, &current_size);
 		else
 			rotate(a, 'a');
@@ -47,8 +47,8 @@ static void	push_all_except_three(t_stack **a, t_stack **b, int size)
 void	calculate_positions(t_stack *s)
 {
 	t_stack	*aux;
-	int	pos;
- 
+	int		pos;
+
 	pos = 0;
 	aux = s;
 	while (aux)
@@ -66,14 +66,7 @@ void	assign_target_pos(t_stack **a, t_stack **b)
 	aux_b = *b;
 	while (aux_b)
 	{
-		//if (check_biggest_index(a, &aux_b))
-		//{
-		//	assing_target_pos_biggest_idx(a, &aux_b);
-		//}
-		//else
-		//{
-			assign_target_pos_lower_idx(a, &aux_b);
-		//}
+		assign_target_pos_lower_idx(a, &aux_b);
 		aux_b = aux_b->next;
 	}
 }
@@ -86,7 +79,6 @@ void	sort_more_than_three(t_stack **a, t_stack **b, int size)
 	push_all_except_three(a, b, size);
 	size_a = 3;
 	size_b = size - 3;
-	//esto se va a repetir
 	while (*b)
 	{
 		calculate_positions(*a);
@@ -96,6 +88,4 @@ void	sort_more_than_three(t_stack **a, t_stack **b, int size)
 		exec_optimal_movs(a, b, &size_a, &size_b);
 	}
 	rotate_until_sorted(a, size_a);
-
-	//hasta aqui se repite hasta que:  [A este ordenado] y [B este vacio]
 }
