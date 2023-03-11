@@ -6,7 +6,7 @@
 /*   By: amorilla <amorilla@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 21:04:39 by amorilla          #+#    #+#             */
-/*   Updated: 2023/02/19 15:34:13 by amorilla         ###   ########.fr       */
+/*   Updated: 2023/03/11 20:55:54 by amorilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	is_valid_number(char *str)
 
 int	num_in_range(long num)
 {
-	return (num <= INT_MAX || num >= INT_MIN);
+	return (num <= INT_MAX && num >= INT_MIN);
 }
 
 void	free_all_list(char ***splited_str, int **list_int, int iserror)
